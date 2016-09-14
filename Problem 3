@@ -1,0 +1,31 @@
+#include <iostream>
+#include <cmath>
+using namespace std;
+
+int main()
+{
+	int prime_max = 0;
+	bool prime = true;
+	int squared = sqrt(600851575143);
+	for (int i = 2; i <= squared; i++)
+	{
+		for (int j = 2; j <= sqrt(i); j ++)
+		{
+			if (i % j == 0)
+			{
+				prime = false;
+				break;
+			}
+			else
+			{
+			    prime = true;
+			}
+		}
+		if (prime && 600851475143 % i == 0 && prime_max < i)
+		{
+		    prime_max = i;
+		}
+	}
+	cout << prime_max << endl;
+	return 0;
+}
