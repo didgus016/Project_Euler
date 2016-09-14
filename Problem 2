@@ -1,0 +1,20 @@
+#include <iostream>
+using namespace std;
+
+int main()
+{
+	int firstterm = 1; int secondterm = 2;
+	int term = 0; int sum = 2;
+	while (term < 4,000,000)
+	{
+		term = firstterm + secondterm;
+		if (term % 2 == 0)
+		{
+			sum = sum + term;
+		}
+		firstterm = secondterm;
+		secondterm = term;
+	}
+	cout << sum << endl;
+	return 0;
+}
