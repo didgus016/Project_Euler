@@ -1,2 +1,2 @@
 # Project_Euler
-Codes that I have used for Project Euler
+Codes that I have written for Project Euler
