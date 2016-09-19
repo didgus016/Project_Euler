@@ -1,0 +1,69 @@
+#include <iostream>
+using namespace std;
+
+int digit(int);
+bool Check(int, int);
+
+int main()
+{
+	int num_max = 0;
+	int product = 0;
+	int max_i = 0;
+	int max_j = 0;
+
+	for (int i = 100; i <= 999; i++)
+	{
+		for (int j = 100; j <= 999; j++)
+		{
+			product = i * j;
+			int digitnum = digit(product);
+			bool Equality = Check(product, digitnum);
+			if (Equality && product > num_max)
+			{
+				num_max = product;
+				max_i = i;
+				max_j = j;
+			}
+		}
+	}
+
+	cout << num_max << endl;
+
+	return 0;
+}
+
+int digit(int num)
+{
+	int temp1 = num;
+	int digit_count = 0;
+	while (temp1 / 10 != 0)
+	{
+		temp1 /= 10;
+		digit_count++;
+	}
+	return digit_count;
+}
+
+bool Check(int num, int count)
+{
+	bool Same = false;
+	int num_rev = 0;
+	int temp2 = num;
+	while (temp2 / 10 != 0)
+	{
+		int dig = temp2 % 10;
+		for (int a = 0; a < count; a++)
+		{
+			dig * 10;
+		}
+		num_rev += dig;
+		count--;
+		temp2 /= 10;
+	}
+	num_rev += temp2;
+	if (num_rev == num)
+	{
+		Same = true;
+	}
+	return Same;
+}
