@@ -1,0 +1,35 @@
+#include <iostream>
+#include <cmath>
+using namespace std;
+
+int main ()
+{
+	int counter = 2;
+	int num = 5;
+	int prime_num = 0;
+	bool prime = false;
+	while (counter != 10001)
+	{
+		int square = floor(sqrt(num));
+		for (int i = 2; i <= square; i++)
+		{
+			if (num % i == 0)
+			{
+				prime = false;
+				break;
+			}
+			else
+			{
+				prime = true;
+			}
+		}
+		if (prime)
+		{
+			counter++;
+			prime_num = num;
+		}
+		num++;
+	}
+	cout << prime_num << endl;
+	return 0;
+}
