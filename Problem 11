@@ -1,0 +1,45 @@
+#include <iostream>
+#include <cmath>
+using namespace std;
+
+bool checkPrime(int);
+
+int main ()
+{
+	int num = 5;
+	long sum = 5;
+	bool prime;
+
+	while (num < 2000000)
+	{
+		prime = checkPrime(num);
+
+		if (prime)
+		{
+			sum += num;
+		}
+		num++;
+	}
+	
+	cout << sum << endl;
+	return 0;
+}
+
+bool checkPrime(int number)
+{
+	bool numIsPrime = false;
+	int square = floor(sqrt(number));
+	for (int i = 2; i <= square; i++)
+	{
+		if (number % i == 0)
+		{
+			numIsPrime = false;
+			break;
+		}
+		else
+		{
+			numIsPrime = true;
+		}
+	}
+	return numIsPrime;
+}
